@@ -1,6 +1,6 @@
 <form (ngSubmit)="submitSearch()">
   <input type="text" placeholder="Search Music" name="term" [(ngModel)]="term" class="form-control input-lg well">
-  <button type="submit">Search</button>
+  <button type="submit" class="btn btn-info">Search</button>
 </form>
 
 <div *ngIf="!results">

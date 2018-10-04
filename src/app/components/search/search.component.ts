@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
 
   submitSearch() {
     console.log('Searching');
-    debugger
+    // debugger
     this.search.searchMusic(this.term).subscribe( res => {
       this.results = res;
       console.log(this.results);

@@ -13,8 +13,8 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   searchMusic(term: String): Observable<SearchResults> {
-    console.log(this.http.jsonp<SearchResults>(`${this.baseUrl}country&;entity=musicArtist&term` + term, 'callback'));
+    console.log(this.http.jsonp<SearchResults>('https://itunes.apple.com/search?entity=movie&term=' + term, 'callback'));
     // debugger
-    return this.http.jsonp<SearchResults>(`${this.baseUrl}country&;entity=musicArtist&term` + term, 'callback');
+    return this.http.jsonp<SearchResults>(`${this.baseUrl}media=music&term=` + term, 'callback');
   }
 }
