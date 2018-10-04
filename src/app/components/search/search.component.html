@@ -1,3 +1,18 @@
-<p>
-  search works!
-</p>
+<form (ngSubmit)="submitSearch()">
+  <input type="text" placeholder="Search Music" name="term" [(ngModel)]="term" class="form-control input-lg well">
+  <button type="submit">Search</button>
+</form>
+
+<div *ngIf="!results">
+  <p>Search for something!</p>
+</div>
+
+<div *ngIf="results?.resultCount == 0">
+    <p>Couldn't find results</p>
+</div>
+
+<div *ngIf="results?.resultCount > 0">
+  <div *ngFor="let res of results.results">
+    <p>{{ res.trackName }} - {{ res.artistName }}</p>
+  </div>
+</div>
