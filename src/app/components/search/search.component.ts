@@ -25,4 +25,16 @@ export class SearchComponent implements OnInit {
     })
   }
 
+  orderByTime() {
+    console.log('order By Time');
+  }
+
+  orderByGenre() {
+    console.log('order By Genre');
+  }
+
+  orderByPrice() {
+    console.log('order By Price');
+  }
+
 }
