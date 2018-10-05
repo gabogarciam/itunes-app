@@ -24,7 +24,6 @@
       <th><a (click)="orderByTime()">TIME</a></th>
       <th><a (click)="orderByGenre()">GENRE</a></th>
       <th><a (click)="orderByPrice()">PRICE</a></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -38,10 +37,6 @@
     <td>{{ res.trackTimeMillis | date:'m:ss' }}</td>
     <td>{{ res.primaryGenreName }}</td>
     <td>{{ res.trackPrice }}&#8364;</td>
-    <td><audio id="player" controls>
-        <source id="player-source" src="{{res.previewUrl}}" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio></td>
   </tr>
   </tbody>
 </table>

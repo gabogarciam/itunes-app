@@ -23,7 +23,7 @@ export interface SearchEntry {
     collectionHdPrice: number;
     trackHdPrice: number;
     trackHdRentalPrice: number;
-    releaseDate: string; // Date
+    releaseDate: string;
     collectionExplicitness: string;
     trackExplicitness: string;
     trackCount: number;
