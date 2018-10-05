@@ -34,7 +34,7 @@
     <td>{{ res.collectionName }}</td>
     <td>{{ res.releaseDate | date }}</td>
     <td><img src="{{ res.artworkUrl100 }}" alt=""></td>
-    <td>{{ res.trackTimeMillis }}</td>
+    <td>{{ res.trackTimeMillis | date:'m:ss' }}</td>
     <td>{{ res.primaryGenreName }}</td>
     <td>{{ res.trackPrice }}&#8364;</td>
   </tr>
