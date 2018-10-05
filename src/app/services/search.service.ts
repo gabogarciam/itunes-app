@@ -9,6 +9,8 @@ import { SearchResults } from '../models/search-results.model';
 export class SearchService {
 
   baseUrl: string = 'https://itunes.apple.com/search?';
+  trackId = null;
+  sharedData = null;
 
   constructor(private http: HttpClient) { }
 

@@ -11,7 +11,7 @@
     <p>Couldn't find results</p>
 </div>
 
-<h3 *ngIf="results?.resultCount > 0">Search Results</h3>
+<h3 *ngIf="results?.resultCount > 0"><a [routerLink]="['/listmusic']">Search Results</a></h3>
 <table *ngIf="results?.resultCount > 0" class="table">
   <thead class="thead-dark">
     <tr>
@@ -29,7 +29,7 @@
   <tbody>
   <tr *ngFor="let res of results.results; let i=index">
     <td>{{ i+1 }}</td>
-    <td><a href="{{ res.trackViewUrl }}">{{ res.trackName }}</a></td>
+    <td id="{{i}}"><a [routerLink]="['/listmusic']" (click)="idSong(i)">{{ res.trackName }}</a></td>
     <td>{{ res.artistName }}</td>
     <td>{{ res.collectionName }}</td>
     <td>{{ res.releaseDate | date }}</td>

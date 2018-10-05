@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { SearchService } from './services/search.service';
 import { SearchComponent } from './components/search/search.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ListMusicComponent } from './components/list-music/list-music.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
   { path: 'search',  component: SearchComponent },
+  { path: 'listmusic', component: ListMusicComponent },
   { path: '**', redirectTo: '/search' }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    ListMusicComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +30,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    SearchService,
-    // MusicService
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

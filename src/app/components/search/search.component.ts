@@ -17,11 +17,11 @@ export class SearchComponent implements OnInit {
   }
 
   submitSearch() {
-    console.log('Searching');
     // debugger
     this.search.searchMusic(this.term).subscribe( res => {
       this.results = res;
-      console.log(this.results);
+      this.search.sharedData = this.results;
+      // console.log(this.results);
     })
   }
 
@@ -35,6 +35,10 @@ export class SearchComponent implements OnInit {
 
   orderByPrice() {
     console.log('order By Price');
+  }
+
+  idSong(id) {
+    this.search.trackId = id;
   }
 
 }
