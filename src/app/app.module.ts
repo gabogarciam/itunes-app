@@ -6,6 +6,13 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SearchService } from './services/search.service';
 import { SearchComponent } from './components/search/search.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: 'search',  component: SearchComponent },
+  { path: '**', redirectTo: '/search' }
+];
 
 @NgModule({
   declarations: [
@@ -16,10 +23,12 @@ import { SearchComponent } from './components/search/search.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
-    SearchService
+    SearchService,
+    // MusicService
   ],
   bootstrap: [AppComponent]
 })

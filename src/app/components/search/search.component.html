@@ -1,6 +1,6 @@
 <form (ngSubmit)="submitSearch()">
-  <input type="text" placeholder="Search Music" name="term" [(ngModel)]="term" class="form-control input-lg well">
-  <button type="submit" class="btn btn-info">Search</button>
+  <input type="text" placeholder="Type to search music" name="term" [(ngModel)]="term" class="form-control input-lg well">
+  <!-- <button type="submit" class="btn btn-info">Search</button> -->
 </form>
 
 <div *ngIf="!results">
@@ -11,8 +11,38 @@
     <p>Couldn't find results</p>
 </div>
 
-<div *ngIf="results?.resultCount > 0">
-  <div *ngFor="let res of results.results">
-    <p>{{ res.trackName }} - {{ res.artistName }}</p>
+<!-- <div *ngIf="results?.resultCount > 0">
+  <h3>Search Results</h3>
+  <div *ngFor="let res of results.results | slice:0:9">
+    <a href="{{ res.trackViewUrl }}">
+      <p>{{ res.trackName }} - {{ res.artistName }} - {{ res.collectionName }} - {{ res.trackPrice }}&#8364;</p>
+    </a>
   </div>
-</div>
+</div> -->
+<h3 *ngIf="results?.resultCount > 0">Search Results</h3>
+<table *ngIf="results?.resultCount > 0" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>TITLE</th>
+      <th>ARTIST</th>
+      <th>ALBUM</th>
+      <th>RELASE DATE</th>
+      <th>COVER</th>
+      <th>TIME</th>
+      <th>GENERO</th>
+      <th>PRICE</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let res of results.results | slice:0:9">
+    <td><a href="{{ res.trackViewUrl }}">{{ res.trackName }}</a></td>
+    <td>{{ res.artistName }}</td>
+    <td>{{ res.collectionName }}</td>
+    <td>{{ res.releaseDate | date }}</td>
+    <td><img src="{{ res.artworkUrl100 }}" alt=""></td>
+    <td>{{ res.trackTimeMillis }}</td>
+    <td>{{ res.primaryGenreName }}</td>
+    <td>{{ res.trackPrice }}&#8364;</td>
+  </tr>
+  </tbody>
+</table>
