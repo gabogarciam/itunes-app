@@ -11,18 +11,11 @@
     <p>Couldn't find results</p>
 </div>
 
-<!-- <div *ngIf="results?.resultCount > 0">
-  <h3>Search Results</h3>
-  <div *ngFor="let res of results.results | slice:0:9">
-    <a href="{{ res.trackViewUrl }}">
-      <p>{{ res.trackName }} - {{ res.artistName }} - {{ res.collectionName }} - {{ res.trackPrice }}&#8364;</p>
-    </a>
-  </div>
-</div> -->
 <h3 *ngIf="results?.resultCount > 0">Search Results</h3>
 <table *ngIf="results?.resultCount > 0" class="table">
   <thead class="thead-dark">
     <tr>
+      <th></th>
       <th>TITLE</th>
       <th>ARTIST</th>
       <th>ALBUM</th>
@@ -34,7 +27,8 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let res of results.results | slice:0:9">
+  <tr *ngFor="let res of results.results; let i=index">
+    <td>{{ i+1 }}</td>
     <td><a href="{{ res.trackViewUrl }}">{{ res.trackName }}</a></td>
     <td>{{ res.artistName }}</td>
     <td>{{ res.collectionName }}</td>
