@@ -25,6 +25,10 @@ export class ListMusicComponent implements OnInit {
 
   playTrack(id) {
     console.log('id play: '+id);
+
+    let trackName = this.results.results[id].trackName;
+    (document.getElementById('trackName') as HTMLImageElement).textContent = trackName;
+
     let img = this.results.results[id].artworkUrl100;
     (document.getElementById('img-album') as HTMLImageElement).src = img;
     // let img = document.getElementById('img-album')
