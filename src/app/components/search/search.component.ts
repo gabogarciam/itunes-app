@@ -9,7 +9,7 @@ import { SearchService } from '../../services/search.service';
 })
 export class SearchComponent implements OnInit {
   term : String;
-  results: SearchResults;
+  results;
 
   constructor(private search: SearchService) { }
 
@@ -20,24 +20,34 @@ export class SearchComponent implements OnInit {
     // debugger
     this.search.searchMusic(this.term).subscribe( res => {
       this.results = res;
+      console.log(this.results);
       this.search.sharedData = this.results;
-      // console.log(this.results);
     })
   }
 
   orderByTime() {
-    console.log('order By Time');
+    let array = this.results.results;
+    array.sort((a,b) => {
+      return a.trackTimeMillis - b.trackTimeMillis;
+    });
   }
 
   orderByGenre() {
-    console.log('order By Genre');
+    let array = this.results.results;
+    array.sort((a,b) => {
+      return a.primaryGenreName - b.primaryGenreName;
+    });
+    console.log('Complet ???');
   }
 
   orderByPrice() {
-    console.log('order By Price');
+    let array = this.results.results;
+    array.sort((a,b) => {
+      return a.trackPrice - b.trackPrice;
+    });
   }
 
-  idSong(id) {
+  getId(id) {
     this.search.trackId = id;
   }
 
