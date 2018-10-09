@@ -24,10 +24,19 @@ export class ListMusicComponent implements OnInit {
   }
 
   playTrack(id) {
-    console.log('id play: '+id);
-
     let trackName = this.results.results[id].trackName;
-    (document.getElementById('trackName') as HTMLImageElement).textContent = trackName;
+    (document.getElementById('trackName') as HTMLTitleElement).textContent = trackName;
+
+    let artistName = this.results.results[id].artistName;
+    (document.getElementById('artistName') as HTMLTitleElement).textContent = artistName;
+
+    let genreName = this.results.results[id].primaryGenreName;
+    (document.getElementById('genreName') as HTMLTimeElement).textContent = genreName;
+
+    let relaseDate = this.results.results[id].releaseDate;
+    let year = new Date(relaseDate);
+    let fullYear = year.getFullYear();
+    (document.getElementById('relaseDate') as HTMLTitleElement).textContent = ' - '+fullYear;
 
     let img = this.results.results[id].artworkUrl100;
     (document.getElementById('img-album') as HTMLImageElement).src = img;
@@ -38,15 +47,13 @@ export class ListMusicComponent implements OnInit {
     // console.log(song);
     // (document.getElementById('source-track') as HTMLAudioElement).src = song;
     this.nextAudio.src = song;
-    if (this.nextAudio.currentSrc != this.nextAudio.src) {
-      this.nextAudio.remove();
-    }
     this.nextAudio.controls;
     this.nextAudio.load();
     this.nextAudio.play();
-    // document.getElementById("source-track").setAttribute('src', song);
-    // let audio = xdocument.getElementsByTagName('audio');
-    // audio[0].autoplay = true;
+
+    //document.getElementById("player").setAttribute('src', song);
+    //let audio = document.getElementsByTagName('audio');
+    //audio[0].autoplay = true;
     // console.log(audio);
   }
 

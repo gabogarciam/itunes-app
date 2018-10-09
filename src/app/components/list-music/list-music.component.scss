@@ -1,10 +1,10 @@
 #img-album {
     // display: block;
     // content: "";
-    // width: 100%;
     // height: 0;
     // position: absolute;
-    border-radius: 6px;
+    width: 300px;
+    border-radius: 50%;
     border: .5px solid rgba(0,0,0,.1);
     z-index: 1;
 }
@@ -30,6 +30,23 @@ h4 {
     font-family: "SF Pro Display","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.table {
+    border-collapse: collapse;
+}
+
+.table-head {
+    border-bottom: 1px solid #e5e5e5;
+}
+
 #playlist td:first-child {
     padding-right: 15px;
+}
+
+td {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.duration {
+    padding-left: 22px;
 }

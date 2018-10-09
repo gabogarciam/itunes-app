@@ -1,24 +1,38 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-5 col-md-5 col-lg-5" id="albumplayer">
-      <img id="img-album" src="{{ results.results[trackId].artworkUrl100 }}" width="300" alt="">
+      <img id="img-album" src="{{ results.results[trackId].artworkUrl100 }}" alt="">
       <div id="player">
-        <audio controls id="player">
-          <source src="" type="audio/mpeg" id="source-track">
+        <audio controls src="" id="player">
+          <!-- <source src="" type="audio/mpeg" id="source-track"> -->
         </audio>
       </div>
     </div>
     <div class="l-colum col-sm-7 col-md-7 col-lg-7">
       <div class="product-header">
-        <h3 id="trackName">{{ results.results[trackId].trackName }}</h3>
-        <h4>{{ results.results[trackId].artistName }}</h4>
-        <h5>{{ results.results[trackId].primaryGenreName }} * {{ results.results[trackId].releaseDate | date  }}</h5>
+        <h3 id="trackName"></h3>
+        <h4 id="artistName"></h4>
+        <div>
+          <span id="genreName"></span>
+          <span id="relaseDate"></span>
+        </div>
       </div>
-      <tr class="list-search" id="playlist" *ngFor="let res of results.results; let i=index">
-        <td>{{ i + 1 }}</td>
-        <td id="{{ i }}"><a (click)="playTrack(i)">{{ res.trackName }}</a></td>
-        <td>{{ res.trackTimeMillis | date:'m:ss' }}</td>
-      </tr>
+      <table class="table">
+        <thead class="table-head">
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="list-search" id="playlist" *ngFor="let res of results.results; let i=index">
+            <td>{{ i + 1 }}</td>
+            <td id="{{ i }}"><a (click)="playTrack(i)">{{ res.trackName }}</a></td>
+            <td class="duration">{{ res.trackTimeMillis | date:'m:ss' }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
