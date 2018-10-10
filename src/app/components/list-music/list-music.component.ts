@@ -47,14 +47,24 @@ export class ListMusicComponent implements OnInit {
     // console.log(song);
     // (document.getElementById('source-track') as HTMLAudioElement).src = song;
     this.nextAudio.src = song;
-    this.nextAudio.controls;
     this.nextAudio.load();
-    this.nextAudio.play();
+    // this.nextAudio;
+    
 
-    //document.getElementById("player").setAttribute('src', song);
+    //document.getElementById("source-track").setAttribute('src', song);
     //let audio = document.getElementsByTagName('audio');
     //audio[0].autoplay = true;
     // console.log(audio);
+  }
+
+  playPause() {
+    let music = document.getElementById('player');
+    if (music.paused) {
+      
+    } else {
+      
+    }
+    this.nextAudio.play();
   }
 
 
