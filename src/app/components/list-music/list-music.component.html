@@ -34,7 +34,7 @@
         <tbody>
           <tr class="list-search" id="playlist" *ngFor="let res of results.results; let i=index">
             <td>{{ i + 1 }}</td>
-            <td id="{{ i }}"><a (click)="playTrack(i)">{{ res.trackName }}</a></td>
+            <td id="{{ i }}"><a (click)="loadSong(i)">{{ res.trackName }}</a></td>
             <td class="duration">{{ res.trackTimeMillis | date:'m:ss' }}</td>
           </tr>
         </tbody>
