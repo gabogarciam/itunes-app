@@ -20,10 +20,10 @@ export class ListMusicComponent implements OnInit {
     console.log('Data: ', this.results);
     this.trackId = this.search.trackId;
     console.log(this.trackId);
-    this.playTrack(this.trackId);
+    this.loadSong(this.trackId);
   }
 
-  playTrack(id) {
+  loadSong(id) {
     let trackName = this.results.results[id].trackName;
     (document.getElementById('trackName') as HTMLTitleElement).textContent = trackName;
 
@@ -58,13 +58,16 @@ export class ListMusicComponent implements OnInit {
   }
 
   playPause() {
-    let music = document.getElementById('player');
-    if (music.paused) {
-      
+    if (this.nextAudio.paused) {
+      this.nextAudio.play();
     } else {
-      
+      this.nextAudio.pause();
     }
-    this.nextAudio.play();
+  }
+
+  stop() {
+    this.nextAudio.pause();
+    this.nextAudio.currentTime = 0;
   }
 
 
