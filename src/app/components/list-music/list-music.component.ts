@@ -49,6 +49,8 @@ export class ListMusicComponent implements OnInit {
     this.nextAudio.src = song;
     this.nextAudio.load();
     // this.nextAudio;
+    this.playPause();
+    this.trackId = id;
     
 
     //document.getElementById("source-track").setAttribute('src', song);
@@ -71,12 +73,16 @@ export class ListMusicComponent implements OnInit {
   }
 
   prev() {
-    console.log('previus song here');
+    this.trackId--;
+    this.loadSong(this.trackId);
+    this.stop();
+    this.playPause();
   }
 
   next() {
-    console.log('next song here');
+    this.trackId++;
+    this.loadSong(this.trackId);
+    this.stop();
+    this.playPause();
   }
-
-
 }
