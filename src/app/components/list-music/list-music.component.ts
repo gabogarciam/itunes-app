@@ -70,5 +70,13 @@ export class ListMusicComponent implements OnInit {
     this.nextAudio.currentTime = 0;
   }
 
+  prev() {
+    console.log('previus song here');
+  }
+
+  next() {
+    console.log('next song here');
+  }
+
 
 }
