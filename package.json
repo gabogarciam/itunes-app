@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng app.js",
+    "start": "node server.js",
     "heroku-prebuild": "rm -rf node_modules && npm cache clean --force",
     "postinstall": "ng build --aot --prod",
     "build": "ng build",
