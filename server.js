@@ -9,4 +9,4 @@ app.get('*', (req, res, nex) => {
     res.sendfile(path.join(__dirname + '/dist/itunes-app/index.html'));
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8080);
