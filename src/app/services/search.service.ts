@@ -3,6 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SearchResults } from '../models/search-results.model';
 
+//Heroku
+import { environment } from '../../environments/environment';
+const apiUrl = environment.apiUrl
+
 @Injectable({
   providedIn: 'root'
 })
