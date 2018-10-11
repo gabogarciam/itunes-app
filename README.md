@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Deploy Heroku
 
-[a relative link](https://itunes-search-music.herokuapp.com/)
+[Itunes Search Music App](https://itunes-search-music.herokuapp.com/)
 
 ## Development server
 
