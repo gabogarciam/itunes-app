@@ -7,8 +7,29 @@ html {
     box-sizing: inherit;
   }
   
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  padding: 10px;
+}
+
+.title-app {
+  color: #111;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: .009em;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.title-app-s {
+  color: #8e8e93;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: .009em;
+    font-family: "SF Pro Display","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+}

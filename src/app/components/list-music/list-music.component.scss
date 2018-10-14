@@ -3,10 +3,12 @@
     // content: "";
     // height: 0;
     // position: absolute;
-    width: 300px;
-    border-radius: 50%;
+    width: 268px;
+    height: 268px;
+    border-radius: 6px;
     border: .5px solid rgba(0,0,0,.1);
     z-index: 1;
+    text-align: center;
 }
 
 #player{
