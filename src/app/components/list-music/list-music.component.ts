@@ -74,6 +74,9 @@ export class ListMusicComponent implements OnInit {
 
   prev() {
     this.trackId--;
+    if (this.trackId < 0 ) {
+      this.trackId = 0;
+    }
     this.loadSong(this.trackId);
     this.stop();
     this.playPause();
